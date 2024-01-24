@@ -1,10 +1,11 @@
 import { Button } from "@mui/joy";
 
 const ToggleButton = (props) => {
-  const { text, pressed, onClick} = props;
+  const { text, pressed, onClick, style} = props;
 
   return (
       <Button
+        style={style}
         color='primary'
         variant='outlined'
         onClick={onClick}
