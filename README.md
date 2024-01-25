@@ -3,8 +3,8 @@ A simple web-app to keep track of vaults layout while playing [Vault Hunters](ht
 Keep it open on your phone while running a vault to not get lost!
 
 ## Features
-- Web based (no need to install, just [go here](https://main--harmonious-cactus-5342b3.netlify.app/)https://main--harmonious-cactus-5342b3.netlify.app/)
-- Vault orientation
+- Web based (no need to install, just [go here](https://main--harmonious-cactus-5342b3.netlify.app/)
+- Select vault's orientation
 - Mark interesting rooms
 - Visualize path
 - Up to 20 x 20 Vaults
@@ -53,3 +53,5 @@ This is still a work in progress. Although the main functionality has been imple
 - Dark mode
 - Favicon
 - Better graphic and css animations
+- Reminder of vault facing direction
+- Extra stuff (i have ideas written down on a post-it on my desk)
