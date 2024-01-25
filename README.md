@@ -1,5 +1,5 @@
 # Vault Hunters Companion
-A simple web-app to keep track of vaults layout while playing [Vault Hunters](https://vaulthunters.gg/).
+A simple web-app to keep track of vaults layout while playing [Vault Hunters](https://vaulthunters.gg/).  
 Keep it open on your phone while running a vault to not get lost!
 
 ## Features
