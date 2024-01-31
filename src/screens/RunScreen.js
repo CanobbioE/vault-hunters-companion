@@ -72,16 +72,22 @@ const RunScreen = (props) => {
     }
 
     const shouldDisable = dir => {
-        if (path.length === 1) {
+        const rooms = path.length
+        if (rooms === 0) {
+            return true
+        }
+
+        const currentRoom = path[rooms-1]
+        if (rooms === 1 || (currentRoom.x === START_X && currentRoom.y === START_Y)) {
             return dir !== direction
         }
 
-        const newX = calculateX(path[path.length - 1], dir)
+        const newX = calculateX(currentRoom, dir)
         if (newX >= MAX_X || newX <= 0) {
             return true
         }
 
-        const newY = calculateY(path[path.length - 1], dir)
+        const newY = calculateY(currentRoom, dir)
         if (newY >= MAX_Y || newY <= 0) {
             return true
         }
