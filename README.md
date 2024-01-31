@@ -48,7 +48,6 @@ This is still a work in progress. Although the main functionality has been imple
 - Undo button
 - Reset vault
 - Navigation
-- Keep phone screen awake
 - Better screen size supports
 - Dark mode
 - Better graphic and css animations
