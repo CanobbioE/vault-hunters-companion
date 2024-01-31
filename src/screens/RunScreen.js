@@ -14,7 +14,7 @@ const btnStyle = { width: '45px' }
 
 const RunScreen = (props) => {
     const { direction } = props
-    const [path, setPath] = useState([{ direction: direction, start: true, x: START_X, y: START_Y }])
+    const [path, setPath] = useState([{ marked: false, direction: direction, start: true, x: START_X, y: START_Y }])
     const [mark, setMark] = useState(false)
 
     const calculateX = (old, dir) => {
@@ -39,21 +39,37 @@ const RunScreen = (props) => {
         }
     }
 
+    const isFirstRoom = () => {
+        const rooms = path.length
+        // prevend edge case when evaluating currentRoom
+        if (rooms === 0) {
+            return true
+        }
+
+        const currentRoom = path[rooms-1]
+        return rooms === 1 || (currentRoom.x === START_X && currentRoom.y === START_Y)
+    }
+
     const handleMove = (dir) => {
         const room = {
             direction: dir,
-            marked: mark,
             x: calculateX(path[path.length - 1], dir),
             y: calculateY(path[path.length - 1], dir)
         }
-        setPath([...path, room])
         setMark(false)
+        setPath([...path, room])
     }
 
-
-
     const handleMark = () => {
-        setMark(m => !m)
+        const room = path.pop()
+        setMark(m => {
+            room.marked = !m
+            return !m
+        })
+        
+        setPath([...path, room])
+
+        console.log(path)
     }
 
     const opposite = dir => {
@@ -72,15 +88,10 @@ const RunScreen = (props) => {
     }
 
     const shouldDisable = dir => {
-        const rooms = path.length
-        if (rooms === 0) {
-            return true
-        }
-
-        const currentRoom = path[rooms-1]
-        if (rooms === 1 || (currentRoom.x === START_X && currentRoom.y === START_Y)) {
+        if (isFirstRoom()) {
             return dir !== direction
         }
+        const currentRoom = path[path.length-1]
 
         const newX = calculateX(currentRoom, dir)
         if (newX >= MAX_X || newX <= 0) {
@@ -103,7 +114,6 @@ const RunScreen = (props) => {
 
     return (
         <Grid container spacing={8} xs={12} justifyContent={'center'}>
-            {/*sx={{ height: '50vh',  }} */}
             <Grid xs={12} sx={{ height: '50vh', padding: '0' }}>
                 <MagicPath path={path} />
             </Grid>
@@ -120,7 +130,7 @@ const RunScreen = (props) => {
                     </Grid>
 
                     <Grid >
-                        <Button size={'lg'} variant={mark ? 'solid' : 'outlined'} onClick={handleMark} >Mark</Button>
+                        <Button disabled={isFirstRoom()} size={'lg'} variant={mark ? 'solid' : 'outlined'} onClick={handleMark} >Mark</Button>
                     </Grid>
 
                     <Grid sx={{ paddingTop: '10px' }}>
