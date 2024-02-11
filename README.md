@@ -7,7 +7,7 @@ Keep it open on your phone while running a vault to not get lost!
 - Select vault's orientation
 - Mark interesting rooms
 - Visualize path
-- Up to 20 x 20 Vaults
+- Up to 20 x 20 rooms Vaults
 
 ## Usage (with screenshots)
 <details>
@@ -40,21 +40,24 @@ Keep it open on your phone while running a vault to not get lost!
 
 
 ## TODO
-This is still a work in progress. Although the main functionality has been implemented, there's still a long way to go.
+This is still a work in progress. Although the main functionalities have been implemented, there's still a long way to go.
 - Bigger better buttons
+- Bigger better canvas
 - Mark room menu (add notes to room)
-- Customize marks
+- Settings (nosleep, colors, darkmode)
 - Store session in cookies
 - Undo button
 - Reset vault
-- Navigation
+- Navigation (go to previous screen)
 - Better screen size supports
 - Dark mode
 - Better graphic and css animations
 - Reminder of vault facing direction
+- Screen for vault type selection (cake, scav, etc...)
+- Different markings based on vault type
 - Extra stuff (i have ideas written down on a post-it on my desk)
 
 ## Licenses
 This software is distributed under the MIT license.
-Any asset used is used within the Creative Common rights.
-If you are the author of any of the images used by this project and they were mistakenly licensed, please contact me and I'll promptly remove them.
+Any assets that are part of this project are used within the Creative Common rights.
+If you are the author of any of the images used and they were mistakenly licensed, please contact me and I'll promptly remove them.
