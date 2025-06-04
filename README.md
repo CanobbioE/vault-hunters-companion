@@ -1,4 +1,8 @@
 # Vault Hunters Companion
+⚠️ **Deprecated**: since [update 18.2](https://www.youtube.com/watch?v=8ieAwhPclMc) Vault Huters has a built-in map display.
+Happy to see that implemented within the game!
+
+
 A simple web-app to keep track of vaults layout while playing [Vault Hunters](https://vaulthunters.gg/).  
 Keep it open on your phone while running a vault to not get lost!
 
